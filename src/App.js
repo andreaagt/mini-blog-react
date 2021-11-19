@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Create from './components/Create';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import BlogDetails from './components/BlogDetails';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -11,12 +12,9 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
+            <Route path="*" element={<NotFound />} />  
             <Route exact path="/" element={<Home />} />   
-          </Routes>
-          <Routes>
             <Route path="/create" element={<Create />} />  
-          </Routes>
-          <Routes>
             <Route path="/blogs/:id" element={<BlogDetails />} />  
           </Routes>
         </div>
